@@ -4,6 +4,20 @@ version '0.0.1-SNAPSHOT'
 // Import the default configuration of maven resource distribution
 apply plugin: 'java'
 
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.0.1.RELEASE'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
+}
+
 // upload jar file to local maven repositories.
 apply plugin: 'maven'
 def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
@@ -11,7 +25,6 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository(url: localMavenRepo)
-
             //构造项目的Pom文件
             pom.project {
                 name = project.name
@@ -19,6 +32,5 @@ uploadArchives {
                 description = 'description'
             }
         }
-
     }
 }

@@ -1,0 +1,15 @@
+{
+  "couldLoadTestCaseData" : {
+    "property1" : "value1"
+  },
+  "couldDeserializeTestCaseData" : {
+    "user" : {
+      "name" : "Paul Wong",
+      "sex" : "Male"
+    },
+    "company" : {
+      "name" : "ppmoney",
+      "location" : "shanghai"
+    }
+  }
+}
