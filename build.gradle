@@ -1,0 +1,24 @@
+group 'com.newc.asset'
+version '0.0.1-SNAPSHOT'
+
+// Import the default configuration of maven resource distribution
+apply plugin: 'java'
+
+// upload jar file to local maven repositories.
+apply plugin: 'maven'
+def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: localMavenRepo)
+
+            //构造项目的Pom文件
+            pom.project {
+                name = project.name
+                packaging = 'jar'
+                description = 'description'
+            }
+        }
+
+    }
+}
