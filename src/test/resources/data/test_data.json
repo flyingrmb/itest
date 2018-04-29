@@ -1,0 +1,16 @@
+{
+  "simpleData" : {
+    "property1" : "value1"
+  },
+  "deserializeNode" : {
+    "information" : "test_data_node",
+    "user" : {
+      "name" : "Paul Wong",
+      "sex" : "Male"
+    },
+    "company" : {
+      "name" : "ppmoney",
+      "location" : "shanghai"
+    }
+  }
+}

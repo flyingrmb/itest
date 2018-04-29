@@ -1,0 +1,17 @@
+{
+  "fileName" : "method_test_data",
+  "simpleData" : {
+    "property1" : "value1"
+  },
+  "deserializeNode" : {
+    "information" : "method_test_data_node",
+    "user" : {
+      "name" : "Paul Wong(method)",
+      "sex" : "Male"
+    },
+    "company" : {
+      "name" : "ppmoney(method)",
+      "location" : "shanghai"
+    }
+  }
+}
